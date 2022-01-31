@@ -1,21 +1,22 @@
-import { useState } from 'react'
+import { Ejercicio, Seccion } from "../../components/Seccion"
 
 const Jest = () => {
-  const [collapse, setCollapse] = useState(true)
   return (
     <>
-      <h1 style={{backgroundColor: 'red'}} onClick={() => setCollapse(!collapse)}>Jest</h1>
-      <div style={{display: collapse ? 'none': 'block'}}>
+      <Seccion texto='Jest'>
         {/* Ejercicio 1 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 1</h1>
-        
+        <Ejercicio texto='Ejercicio 1'>
+          TODO:
+        </Ejercicio>
         {/* Ejercicio 2 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 2</h1>
-        
+        <Ejercicio texto='Ejercicio 2'>
+          TODO:
+        </Ejercicio>
         {/* Ejercicio 3 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 3</h1>
-        
-      </div>
+        <Ejercicio texto='Ejercicio 3'>
+          TODO:
+        </Ejercicio>
+      </Seccion>
     </>
   )
 }
