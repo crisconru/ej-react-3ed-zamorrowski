@@ -1,29 +1,22 @@
-import React, { useRef, useState } from 'react';
-
-const FuerzaDelPassword = () => {
-  const [password, setPassword] = useState('')
-  const [fuerza, setFuerza] = useState(0)
-  const passRef = useRef(null);
-  const fuerzaText = () => {
-    if (fuerza >= 4) return 'Contraseña fuerte'
-    if (fuerza >= 2) return 'Contraseña normal'
-    if (fuerza >= 1) return 'Contraseña debil'
-    return 'No hay contraseña'
+const FuerzaDelPassword = ({password}) => {
+  let points = 0
+  if (password.length >= 8) points++
+  if (/[0-9]/.test(password)) points++
+  if (/[A-Z]/.test(password)) points++
+  if (/[$%&/()+-]/.test(password)) points++
+  let text = 'Introduzca argo shurmano'
+  if(points >=4) {
+    text = 'Contraseña fuerte'
+  } else if(points >=2) {
+    text = 'Contraseña normalica'
+  } else if(points >= 1) {
+    text = 'Contraseña débil'
+  } else if (password.length === 0) {
+    text = 'Introduzca argo shurmano'
+  } else {
+    text = 'Esa contraseña da pena'
   }
-
-  handleChange = ()=> {
-    let f = 0
-    const value = passRef.current.value
-    if (value.length >= 8) {
-        f += 1
-    }
-    // if (/[0-9]/.test())
-  }
-
-  return <>
-    <input ref={passRef} type="text" name="password" onChange={handleChange}/>
-    <p>{fuerzaText}</p>
-  </>
+  return <p>{text}</p>
 }
 
 export default FuerzaDelPassword

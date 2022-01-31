@@ -1,29 +1,33 @@
-import { useState } from 'react'
-import FuerzaDelPassword from './FuerzaDelPassword'
+import { Seccion, Ejercicio } from '../../components/Seccion'
+import Select from './Select'
+import ATopeReact from './ATopeReact'
 import UserPass from './UserPass'
 
 const Formularios = () => {
-  const [collapse, setCollapse] = useState(true)
   return (
     <>
-      <h1 style={{backgroundColor: 'red'}} onClick={() => setCollapse(!collapse)}>Formularios</h1>
-      <div style={{display: collapse ? 'none': 'block'}}>
+      <Seccion texto='Formularios'>
         {/* Ejercicio 1 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 1</h1>
-        
+        <Ejercicio texto='Ejercicio 1'>
+          <Select items={['Pepe', 'Domingo', 'Castaño']} value='Domingo' onChange={({target}) => console.log(target.value)}/>
+        </Ejercicio>
         {/* Ejercicio 2 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 2</h1>
-        
+        <Ejercicio texto='Ejercicio 2'>
+          <ATopeReact />
+        </Ejercicio>
         {/* Ejercicio 3 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 3</h1>
-        <UserPass />
+        <Ejercicio texto='Ejercicio 3'>
+          <UserPass />
+        </Ejercicio>
         {/* Ejercicio 4 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 4</h1>
-        {/* <FuerzaDelPassword /> */}
+        <Ejercicio texto='Ejercicio 4'>
+          <UserPass fuerza={true}/>
+        </Ejercicio>
         {/* Ejercicio 5 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 5</h1>
-        
-      </div>
+        <Ejercicio texto='Ejercicio 5'>
+          Todo:
+        </Ejercicio>
+      </Seccion>
     </>
   )
 }
