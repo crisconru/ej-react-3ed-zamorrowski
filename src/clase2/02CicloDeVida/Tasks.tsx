@@ -1,7 +1,16 @@
 import React from 'react';
 
+interface Task {
+  title: string,
+  completed: boolean
+}
+
+interface State {
+  tasks: Task[]
+}
+
 class Tasks extends React.Component {
-  state = {
+  state: Readonly<State> = {
     tasks: []
   }
 

@@ -1,12 +1,16 @@
 import React from 'react';
 
+interface State {
+  show: boolean
+}
+
 class Password extends React.Component {
-  state = {
-      show: false
+  state: Readonly<State> = {
+    show: false
   }
 
   showPassword() {
-    this.setState(state => ({ show: !state.show}))
+    this.setState((state: State) => ({ show: !state.show}))
   }
 
   render() {

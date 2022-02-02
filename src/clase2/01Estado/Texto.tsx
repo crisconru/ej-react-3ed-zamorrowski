@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 
 class Texto extends React.Component {
   state = {
       text: 'Hola'
   }
 
-  updateText(e) {
+  updateText(e: ChangeEvent<HTMLInputElement>) {
     const loQueQuiero = e.target.value
     console.log(loQueQuiero)
       this.setState({ text: loQueQuiero})

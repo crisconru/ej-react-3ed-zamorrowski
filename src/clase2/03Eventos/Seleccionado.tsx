@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 const Seleccionado = () => {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState<string>('')
 
-  const handleSelect = (e) => setValue(e.target.value)
+  const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => setValue(e.target.value)
 
   return <>
     <select onChange={handleSelect}>

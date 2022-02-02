@@ -1,2 +1,6 @@
-const Text = ({text}) => <p>{text}</p>
+interface Props {
+    text: string
+}
+
+const Text = ({text}: Props) => <p>{text}</p>
 export default Text

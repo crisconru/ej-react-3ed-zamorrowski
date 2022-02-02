@@ -1,7 +1,14 @@
 import { useState } from "react"
 
+interface State {
+  id: number,
+  userId: number,
+  completed: boolean,
+  title: string
+}
+
 const Pintar = () => {
-  const [state, setState] = useState(null)
+  const [state, setState] = useState<State | null>(null)
 
   const loadJSON = () => {
     console.log('empieza el fetch')

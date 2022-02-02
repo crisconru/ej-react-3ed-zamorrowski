@@ -1,6 +1,11 @@
-import RemoveTaskButton from './RemoveTaskButton';
+import RemoveTaskButton from './RemoveTaskButton'
 
-export const ListItem = ({content, onClick}) => <>
+interface Props {
+  content: string,
+  onClick: (e: string) => void
+}
+
+export const ListItem = ({content, onClick}: Props) => <>
   <span>{content}</span><RemoveTaskButton id={content} onClick={onClick}/>
   <br />
 </>

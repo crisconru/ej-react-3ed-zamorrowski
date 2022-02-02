@@ -1,18 +1,24 @@
 import React from 'react';
 
+interface State {
+  stop: boolean,
+  pause: boolean,
+  seconds: number
+}
+
 class Cronometro extends React.Component {
-  state = {
+  state: Readonly<State> = {
     stop: true,
     pause: false,
     seconds: 0 
   }
 
-  interval = null
+  interval?: ReturnType<typeof setInterval> | null = null
 
   startInterval = () => {
     if (this.interval === null) {
       this.interval = setInterval(() => {
-        this.setState(state => ({seconds: state.seconds + 1}))
+        this.setState((state: State) => ({seconds: state.seconds + 1}))
       }, 1000)
     }
   }

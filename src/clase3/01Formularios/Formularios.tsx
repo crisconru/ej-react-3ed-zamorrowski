@@ -2,6 +2,7 @@ import { Seccion, Ejercicio } from '../../components/Seccion'
 import Select from './Select'
 import ATopeReact from './ATopeReact'
 import UserPass from './UserPass'
+import Formularido from './Formularido'
 
 const Formularios = () => {
   return (
@@ -25,7 +26,7 @@ const Formularios = () => {
         </Ejercicio>
         {/* Ejercicio 5 */}
         <Ejercicio texto='Ejercicio 5'>
-          Todo:
+          <Formularido />
         </Ejercicio>
       </Seccion>
     </>

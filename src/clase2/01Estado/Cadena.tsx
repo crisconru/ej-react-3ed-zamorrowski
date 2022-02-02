@@ -1,21 +1,27 @@
 import React from 'react';
 
+interface State {
+  caracter: string,
+  sigCaracter: string,
+  cadena: string
+}
+
 class Cadena extends React.Component {
-  state = {
+  state: Readonly<State> = {
     caracter: 'a',
     sigCaracter: 'b',
     cadena: 'a'
   }
 
-  nextChar = (c) => String.fromCharCode(c.charCodeAt(0) + 1)
+  nextChar = (c: string) => String.fromCharCode(c.charCodeAt(0) + 1)
 
-  prevChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1)
+  prevChar = (c: string) => String.fromCharCode(c.charCodeAt(0) - 1)
 
   increment() {
     const siguiente = this.nextChar(this.state.caracter)
     const sisiguiente = this.nextChar(siguiente)
     this.setState(
-      state => (
+      (state: State) => (
         {
           caracter: siguiente,
           sigCaracter: sisiguiente,
@@ -28,7 +34,7 @@ class Cadena extends React.Component {
   decrement() {
     const anterior = this.state.cadena.length > 0 ? String.fromCharCode(this.state.caracter.charCodeAt(0) - 1) : 'a'
     this.setState(
-      state => (
+      (state: State) => (
         {
           caracter: anterior,
           sigCaracter: state.caracter,

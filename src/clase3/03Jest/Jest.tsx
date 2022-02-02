@@ -6,15 +6,15 @@ const Jest = () => {
       <Seccion texto='Jest'>
         {/* Ejercicio 1 */}
         <Ejercicio texto='Ejercicio 1'>
-          TODO:
+          <p>Mirar el fichero <strong>Colors.ts</strong> y <strong>Colors.test.ts</strong></p>
         </Ejercicio>
         {/* Ejercicio 2 */}
         <Ejercicio texto='Ejercicio 2'>
-          TODO:
+          <p>Mirar el fichero <strong>Colors.ts</strong> y <strong>Colors.test.ts</strong></p>
         </Ejercicio>
         {/* Ejercicio 3 */}
         <Ejercicio texto='Ejercicio 3'>
-          TODO:
+          <p>Mirar el fichero <strong>Objeto.ts</strong> y <strong>Objeto.test.ts</strong></p>
         </Ejercicio>
       </Seccion>
     </>

@@ -1,6 +1,11 @@
 import ListItem from "./ListItem"
 
-const List = ({items, onClick}) => {
+interface Props {
+  items: string[],
+  onClick: (e: string) => void
+}
+
+const List = ({items, onClick}: Props) => {
   return <>
     { items.map(item => <ListItem key={item} content={item} onClick={onClick}/>) }
   </>

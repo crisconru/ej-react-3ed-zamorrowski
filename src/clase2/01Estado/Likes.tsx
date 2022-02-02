@@ -1,7 +1,11 @@
 import React from 'react';
 
+interface State {
+  likes: number
+}
+
 class Likes extends React.Component {
-  state = {
+  state: Readonly<State> = {
     likes: 50,
   }
   addLike =  true
@@ -9,7 +13,7 @@ class Likes extends React.Component {
   handleClick = () => {
     const sumando = this.addLike ? 1 : -1
     this.setState(
-      state => ({likes: state.likes + sumando}),
+      (state: State) => ({likes: state.likes + sumando}),
       () => {this.addLike = !this.addLike}
     )
   }

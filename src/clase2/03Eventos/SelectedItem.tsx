@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const opciones = [
   'Primera opción',
@@ -8,8 +8,8 @@ const opciones = [
 ]
 
 const SelectedItem = () => {
-  const [selected, setSelected] = useState(0)
-  const handleSelected = (index) => setSelected(index)
+  const [selected, setSelected] = useState<number>(0)
+  const handleSelected = (index: number) => setSelected(index)
   return (
     <>
     <ul>

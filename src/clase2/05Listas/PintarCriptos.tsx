@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react"
 
+interface Crypto {
+  id: number,
+  name: string
+}
+
 const PintarCriptos = () => {
 
   const getCryptos = () => fetch('https://api.coincap.io/v2/assets')
@@ -7,7 +12,7 @@ const PintarCriptos = () => {
     .then(res => setCryptos(res.data))
     .catch(e => setError(e))
 
-  const [cryptos, setCryptos] = useState([])
+  const [cryptos, setCryptos] = useState<Crypto[]>([])
   const [error, setError] = useState('')
   useEffect(() => {
     getCryptos()

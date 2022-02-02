@@ -1,12 +1,16 @@
 import React from 'react';
 
+interface State {
+  users: string[]
+}
+
 class Users extends React.Component {
-  state = {
-    users: ['Papa', 'Pepe'],
+  state: Readonly<State> = {
+    users: ['Papa', 'Pepe']
   }
 
   componentDidMount() {
-    this.setState(state => ({users: [...state.users, 'Pipi']}))
+    this.setState((state: State) => ({users: [...state.users, 'Pipi']}))
   }
 
   componentWillUnmount() {

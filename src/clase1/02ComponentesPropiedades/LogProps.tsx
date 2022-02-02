@@ -1,4 +1,5 @@
-const LogProps = (props) => {
+
+const LogProps = (props: any) => {
   console.log(props)
   return <p>LogProps</p>
 }

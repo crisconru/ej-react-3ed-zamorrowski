@@ -1,6 +1,12 @@
 import { Doughnut } from 'react-chartjs-2'
 
-const getData = cryptos => {
+interface Crypto {
+  name: string,
+  price: number,
+  total: number
+}
+
+const getData = (cryptos: Crypto[]) => {
   const total = cryptos.reduce((acum, next) => acum + next.price * next.total, 0)
   return {
     labels: cryptos.map(c => c.name),
@@ -26,7 +32,11 @@ const getData = cryptos => {
   }
 }
 
-const PortfolioChart = props => (
+interface Props {
+  cryptos: Crypto[]
+}
+
+const PortfolioChart = (props: Props) => (
   <div style={{height: '100px'}}>
     <Doughnut data={getData(props.cryptos)} />
   </div>

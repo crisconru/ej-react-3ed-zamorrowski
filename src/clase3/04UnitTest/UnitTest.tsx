@@ -1,4 +1,5 @@
 import { Ejercicio, Seccion } from "../../components/Seccion"
+import ProductsPage from "./ProductsPage"
 
 const UnitTest = () => {
   return (
@@ -6,7 +7,7 @@ const UnitTest = () => {
       <Seccion texto='Unit Test y TDD'>
         {/* Ejercicio 1 */}
         <Ejercicio texto='Ejercicio 1'>
-          TODO:
+          <ProductsPage />
         </Ejercicio>
       </Seccion>
     </>

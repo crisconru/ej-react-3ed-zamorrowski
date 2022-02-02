@@ -1,16 +1,18 @@
-import { useRef, useState } from "react"
+import { SyntheticEvent, useRef, useState } from "react"
 
 const clave = 'A tope con React'
 
 const ATopeReact = () => {
 
-  const [validacion, setValidacion] = useState('')
-  const campo = useRef(null);
+  const [validacion, setValidacion] = useState<string>('')
+  const campo = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
-    const mensaje = campo.current.value !== clave ? 'ERROR' : 'Correcto sæcio'
-    setValidacion(mensaje)
+    if (campo.current !== null) {
+      const mensaje = campo.current.value !== clave ? 'ERROR' : 'Correcto sæcio'
+      setValidacion(mensaje)
+    }
   }
 
   return (

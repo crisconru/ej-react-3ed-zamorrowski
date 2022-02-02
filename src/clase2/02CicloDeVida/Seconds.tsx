@@ -1,15 +1,19 @@
 import React from 'react';
 
+interface State {
+  seconds: number
+}
+
 class Users extends React.Component {
-  state = {
+  state: Readonly<State> = {
     seconds: 0,
   }
 
-  interval = null
+  interval: ReturnType<typeof setInterval> | null = null
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      this.setState(state => ({seconds: state.seconds + 1}))
+      this.setState((state: State) => ({seconds: state.seconds + 1}))
     }, 1000)
   }
 

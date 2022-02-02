@@ -1,16 +1,21 @@
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 import AddTaskButton from "./AddTaskButton"
 import InputText from "./InputText"
 import List from "./List"
 
-const initialState = {
+interface State {
+  todos: string[],
+  todo: string
+}
+
+const initialState: State = {
   todos: ['Aprender React'],
   todo: ''
 }
 
 const ListContainer = () => {
-  const [state, setState] = useState(initialState)
-  const handleTodo = ({target}) => setState({
+  const [state, setState] = useState<State>(initialState)
+  const handleTodo = ({target}: ChangeEvent<HTMLInputElement>) => setState({
     ...state,
     todo: target.value
   })
@@ -18,7 +23,7 @@ const ListContainer = () => {
     todos: [...state.todos, state.todo],
     todo: ''
   })
-  const removeTodo = (removableTodo) => {
+  const removeTodo = (removableTodo: string) => {
     setState({
       ...state,
       todos: state.todos.filter(todo => todo !== removableTodo)
