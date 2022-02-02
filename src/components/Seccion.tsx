@@ -1,6 +1,13 @@
 import { useState } from 'react';
 
-const CollapsableSeccion = ({texto, fondo, colorTexto, children}) => {
+interface Props {
+  texto?: string,
+  fondo?: string,
+  colorTexto?: string,
+  children?: any
+}
+
+const CollapsableSeccion = ({texto, fondo, colorTexto, children}: Props) => {
   const [collapse, setCollapse] = useState(true)
   const toggleCollape = () => setCollapse(!collapse)
   return <>
@@ -11,6 +18,6 @@ const CollapsableSeccion = ({texto, fondo, colorTexto, children}) => {
   </>
 }
 
-export const Clase = ({texto, children}) => <CollapsableSeccion texto={texto} fondo='black' colorTexto='white' children={children}/>
-export const Seccion = ({texto, children}) => <CollapsableSeccion texto={texto} fondo='red' colorTexto='black' children={children}/>
-export const Ejercicio = ({texto, children}) => <CollapsableSeccion texto={texto} fondo='green' colorTexto='white' children={children}/>
+export const Clase = ({texto, children}: Props) => <CollapsableSeccion texto={texto} fondo='black' colorTexto='white' children={children}/>
+export const Seccion = ({texto, children}: Props) => <CollapsableSeccion texto={texto} fondo='red' colorTexto='black' children={children}/>
+export const Ejercicio = ({texto, children}: Props) => <CollapsableSeccion texto={texto} fondo='green' colorTexto='white' children={children}/>

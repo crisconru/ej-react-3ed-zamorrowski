@@ -1,19 +1,17 @@
-import { useState } from 'react'
+import { Ejercicio, Seccion } from "../../components/Seccion"
 
 const TestingLibrary = () => {
-  const [collapse, setCollapse] = useState(true)
   return (
-    <>
-      <h1 style={{backgroundColor: 'red'}} onClick={() => setCollapse(!collapse)}>Testing Library</h1>
-      <div style={{display: collapse ? 'none': 'block'}}>
-        {/* Ejercicio 1 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 1</h1>
-        
-        {/* Ejercicio 2 */}
-        <h1 style={{backgroundColor: 'green'}}>Ejercicio 2</h1>
-        
-      </div>
-    </>
+    <Seccion texto='Testing Library'>
+      {/* Ejercicio 1 */}
+      <Ejercicio texto='Ejercicio 1'>
+        TODO:
+      </Ejercicio>
+      {/* Ejercicio 2 */}
+      <Ejercicio texto='Ejercicio'>
+        TODO:
+      </Ejercicio>
+    </Seccion>
   )
 }
 
