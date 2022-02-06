@@ -14,6 +14,6 @@ export const setProductsByDescendingPrince = (products: Product[]) => [...produc
 
 export const priceColor = (price: number) => {
   if (price > 25) return 'red'
-  if (price <= 15) return 'green'
-  return 'orange'
+  if (price > 15) return 'orange'
+  return 'green'
 }
